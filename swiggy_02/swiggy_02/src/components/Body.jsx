@@ -30,6 +30,7 @@ function Body() {
         <h1 className='font-bold text-2xl m-8'>Restaurants with online food delivery in Chhindwara</h1>
         <button onClick={()=>filterTopRestaurant(restArray)} className={isClicked1? 'border bg-amber-200 rounded w-1/12 ml-20 text-xl p-2' : 'border rounded w-1/12 ml-20 text-xl p-2' }  >Rating 4.3+</button>
         <button onClick={()=>resetFilter(restArray)} className={isClicked2 ? 'border bg-amber-200 rounded w-1/12 ml-10 text-xl p-2' : 'border rounded w-1/12 ml-10 text-xl p-2' } >Reset</button>
+        {/* <button onClick={resetFilter} className={isClicked2 ? 'border bg-amber-200 rounded w-1/12 ml-10 text-xl p-2' : 'border rounded w-1/12 ml-10 text-xl p-2' } >Reset</button> */}
         <div> 
           <Search restArray={restArray} setAllRestaurant={setAllRestaurant}  /> 
         </div>
