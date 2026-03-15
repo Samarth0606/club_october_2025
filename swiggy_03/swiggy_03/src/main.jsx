@@ -9,6 +9,7 @@ import Help from './components/Help.jsx';
 import Body from './components/Body.jsx';
 import Error from './components/Error.jsx';
 import RestaurantDetails from './components/RestaurantDetails.jsx';
+import RealTime from './components/RealTime.jsx';
 
 const appProvider = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const appProvider = createBrowserRouter([
       {
         path: '/restaurant/:id' ,
         element: <RestaurantDetails />
-      }
+      },
+      {
+        path: '/clock' ,
+        element: <RealTime />
+      },
     ]
   }
 ]);

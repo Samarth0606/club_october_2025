@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../utils/cartSlice'
 
 function RestaurantDetails() {
     const [foodItems,setFoodItem] = useState([])
@@ -16,6 +18,11 @@ function RestaurantDetails() {
         }
         calling()
     }, [id])
+
+    const dispatch = useDispatch()
+    function handleAddItem(foodItem){
+        dispatch( addItem(foodItem) )
+    }
 
   return (
     <div>
@@ -37,6 +44,7 @@ function RestaurantDetails() {
 
                         <button
                         className="border bg-green-300 h-8 relative top-16 right-5"
+                        onClick={()=>handleAddItem(foodItem)}
                         >
                         Add +
                         </button>
