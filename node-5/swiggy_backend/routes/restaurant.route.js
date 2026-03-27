@@ -1,4 +1,4 @@
-const { readRestaurant, createRestaurant } = require("../controller/restaurant.controller");
+const { readRestaurant, createRestaurant, updateRestaurant, deleteRestaurant } = require("../controller/restaurant.controller");
 
 
 function restaurantRoute(app){
@@ -6,6 +6,10 @@ function restaurantRoute(app){
     app.get('/api/restaurants', readRestaurant)
     // create
     app.post('/api/restaurant', createRestaurant)
+    // edit
+    app.patch('/api/restaurant/:id', updateRestaurant )
+    // delete
+    app.delete('/api/restaurant/:id', deleteRestaurant)
 }
 
 module.exports = restaurantRoute;
