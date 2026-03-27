@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const restaurantRoute = require('./routes/restaurant.route')
 
 // local DB
 // mongoose.connect('mongodb://127.0.0.1:27017/samosa') //promise
@@ -12,6 +13,12 @@ mongoose.connect('mongodb+srv://samarthvohraindia_db_user:5kx1J5WLVYtB0CCx@clust
 .catch((ERR)=>{
     console.log('DB NOT CONNECTED' , ERR) 
 })
+
+app.use(express.json()) //body parsing middleware
+
+app.get('/' , (req,res)=> res.send("Root route"))
+
+restaurantRoute(app)
 
 const PORT = 8080;
 app.listen(PORT , ()=>{
