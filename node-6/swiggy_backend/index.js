@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const restaurantRoute = require('./routes/restaurant.route')
+const userRoute = require('./routes/user.route')
 
 // local DB
 // mongoose.connect('mongodb://127.0.0.1:27017/samosa') //promise
@@ -19,6 +20,7 @@ app.use(express.json()) //body parsing middleware
 app.get('/' , (req,res)=> res.send("Root route"))
 
 restaurantRoute(app)
+userRoute(app)
 
 const PORT = 8080;
 app.listen(PORT , ()=>{
